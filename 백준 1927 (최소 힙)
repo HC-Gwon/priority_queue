@@ -29,13 +29,13 @@ def pop(heap, heapSize):
     # 자식노드가 2개일 때
     while 2 * pos + 1 <= heapSize:
         # 자식노드들보다 작을 때 또는 두 자식노드가 같을 때
-        if (heap[pos] < heap[2 * pos] and heap[pos] < heap[2 * pos + 1]) \
-                or (heap[2 * pos] == heap[2 * pos + 1]):
+        if (heap[pos] < heap[2 * pos] and heap[pos] < heap[2 * pos + 1]):
             break
         # 하나의 자식노드가 부모노드보다 작을 때
         elif heap[2 * pos + 1] < heap[2 * pos]:
             posChange = 2 * pos + 1
-        elif heap[2 * pos] < heap[2 * pos + 1]:
+        #elif heap[2 * pos] <= heap[2 * pos + 1]:
+        else:
             posChange = 2 * pos
 
         tmp = heap[pos]
